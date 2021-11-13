@@ -33,7 +33,43 @@ def game ():
             print("El modo seleccionado es IA")
     else:
         print("Selecciona un modo")
-if elige_modo == 1:
-    numero_intentos = 0
+        if elige_modo == 1:
+             numero_intentos = 0
     while numero_intentos < maximo_intentos :
-        print
+        print("Intenta adivinar el numero: ")
+        intento = int(input())
+        numero_intentos += 1
+
+        if intento < numero :
+            print("Su numero es menor que el numero generado")
+        if intento > numero :
+            print("Su numero es mayor que el numero generado")
+        if intento == numero:
+            break
+    if time == number:
+        print("\n¡Enhorabuena! Has adivinado el número aleatorio en" ,str(times), "oportunidades.")
+        score = maxtime - times
+    
+    if time != number:
+         print("Otra vez será, no ha logrado adivinar el número aleatorio en los" + str(maxtime) + "intentos posibles.")
+         
+         if chossen_mode == 2:
+            times = 0
+            minIA = min
+            maxIA = max 
+            time = (minIA + maxIA)//2
+            while time != number and times < maxtime:
+                time = (minIA + maxIA)//2
+                times += 1
+                print("La IA ha comprobado el número introducido " + str(time) + " y ")
+                if time > number:
+                    print("este se encuentra por encima del número proporcionado.\n")
+                    maxIA = time
+                elif time < number:
+                        print("este se encuentra por debajo del número proporcionado.\n")
+                        minIA = time + 1
+                        print("es el número a adivinar.\n")
+                        print("Ha tardado " + str(times) + (" intentos."))
+choose_level()
+
+    
